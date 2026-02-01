@@ -38,12 +38,12 @@ public class Menu extends JFrame {
     }
 
     private JPanel createCardsPanel() {
-        JPanel cardsPanel = new JPanel();
+        JPanel cardsPanel = new JPanel(new GridBagLayout());
         cardsPanel.setOpaque(false);
-        cardsPanel.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(16, 16, 16, 16);
 
+        // Cargar imágenes desde carpeta raíz
         BufferedImage imgHielo = Resources.loadImage(Resources.IMG_HIELO);
         BufferedImage imgFuego = Resources.loadImage(Resources.IMG_FUEGO);
         BufferedImage imgAgua = Resources.loadImage(Resources.IMG_AGUA);
@@ -81,11 +81,9 @@ public class Menu extends JFrame {
 
         BufferedImage btnImg = Resources.loadImage(Resources.IMG_BOTON_JUGAR);
         if (btnImg != null) {
-            BufferedImage scaled = ImageUtils.scalePixelArt(btnImg, 2);
-            playButton.setIcon(new ImageIcon(scaled));
+            playButton.setIcon(new ImageIcon(ImageUtils.scalePixelArt(btnImg, 2)));
             playButton.setHorizontalTextPosition(SwingConstants.CENTER);
             playButton.setVerticalTextPosition(SwingConstants.CENTER);
-            playButton.setIconTextGap(0);
             playButton.setBorderPainted(false);
             playButton.setContentAreaFilled(false);
         } else {

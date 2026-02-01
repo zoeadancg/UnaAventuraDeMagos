@@ -1,3 +1,4 @@
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -21,7 +22,10 @@ public class CharacterCard extends JPanel {
         setPreferredSize(new Dimension(260, 360));
         setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
-        this.displayImage = ImageUtils.scalePixelArt(baseImage, 2);
+        // Escalar la imagen si existe
+        if (baseImage != null) {
+            this.displayImage = ImageUtils.scalePixelArt(baseImage, 2);
+        }
 
         JLabel name = new JLabel(title, SwingConstants.CENTER);
         name.setFont(new Font(Font.MONOSPACED, Font.BOLD, 16));
