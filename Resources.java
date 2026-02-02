@@ -12,7 +12,9 @@ public final class Resources {
     public static final String IMG_FUEGO = "Images/mago_fuego.png";
     public static final String IMG_AGUA = "Images/mago_agua.png";
     public static final String IMG_ELECTRICIDAD = "Images/mago_electricidad.png";
-    public static final String IMG_BOTON_JUGAR = "Images/boton_jugar.png";
+    public static final String IMG_BOTON_JUGAR = "Images/botonJugar.png";
+    public static final String IMG_PORTADA = "Images/Una_Aventura_de_Magos_logo.png";
+    public static final String IMG_BOTON_CONTINUAR = "Images/boton_continuar.png";
 
     public static BufferedImage loadImage(String path) {
         try {

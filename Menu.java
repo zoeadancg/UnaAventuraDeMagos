@@ -11,6 +11,7 @@ public class Menu extends JFrame {
     public Menu() {
         super("Selección de Personaje");
         setupFrame();
+
         JPanel root = buildRootPanel();
         setContentPane(root);
 
@@ -22,6 +23,8 @@ public class Menu extends JFrame {
         bottom.setBorder(BorderFactory.createEmptyBorder(10, 0, 20, 0));
         bottom.add(createPlayButton());
         root.add(bottom, BorderLayout.SOUTH);
+
+        setVisible(true);
     }
 
     private void setupFrame() {
@@ -77,9 +80,9 @@ public class Menu extends JFrame {
     }
 
     private JButton createPlayButton() {
-        JButton playButton = new JButton("JUGAR");
+        JButton playButton = new JButton("");
 
-        BufferedImage btnImg = Resources.loadImage(Resources.IMG_BOTON_JUGAR);
+        BufferedImage btnImg = Resources.loadImage(Resources.IMG_BOTON_CONTINUAR);
         if (btnImg != null) {
             playButton.setIcon(new ImageIcon(ImageUtils.scalePixelArt(btnImg, 2)));
             playButton.setHorizontalTextPosition(SwingConstants.CENTER);
@@ -132,7 +135,6 @@ public class Menu extends JFrame {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             Menu m = new Menu();
-            m.setVisible(true);
         });
     }
 }
