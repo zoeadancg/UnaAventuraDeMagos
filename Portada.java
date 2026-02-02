@@ -31,7 +31,7 @@ public class Portada extends JFrame {
 
             jugarBtn.addActionListener(e -> {
                 dispose(); // Cierra la portada
-                new PantallaCarga("Cargando...", () -> new Menu()); // Muestra carga y luego el menú
+                new PantallaCarga(() -> new Menu()); // Muestra la animación y luego el menú
             });
 
             add(jugarBtn);
