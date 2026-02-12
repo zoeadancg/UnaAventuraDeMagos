@@ -1,0 +1,21 @@
+{
+    "id": "level1",
+    "name": "Bosque Encantado",
+    "difficulty": 2,
+    "imagePaths": [
+        "images/forest_bg.png",
+        "images/trees.png"
+    ],
+    "animationPaths": [
+        "anim/goblin_walk.gif"
+    ],
+    "soundPaths": [
+        "sfx/ambient_forest.wav"
+    ],
+    "metadata": {
+        "enemyName": "Goblin",
+        "enemyHp": 80,
+        "enemyDamage": 8,
+        "enemyElement": "FIRE"
+    }
+}

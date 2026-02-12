@@ -1,4 +1,9 @@
+package src.ui;
+
 import javax.swing.*;
+
+import src.util.Resources;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
@@ -12,14 +17,13 @@ public class Portada extends JFrame {
         setLayout(null);
 
         // Cargar imágenes desde Resources
-        BufferedImage botonJugar = Resources.loadImage(Resources.IMG_BOTON_JUGAR);
+        BufferedImage botonJugar = Resources.getImage(Resources.IMG_BOTON_JUGAR);
 
-        // Botón JUGAR con imagen
         if (botonJugar != null) {
             int btnWidth = botonJugar.getWidth();
             int btnHeight = botonJugar.getHeight();
 
-            // Centrar el botón horizontalmente y colocarlo cerca del fondo
+            // calcula posición tras setSize; aquí usamos getWidth() ya inicializado
             int x = (getWidth() - btnWidth) / 2;
             int y = getHeight() - btnHeight - 40;
 
@@ -30,23 +34,36 @@ public class Portada extends JFrame {
             jugarBtn.setFocusPainted(false);
 
             jugarBtn.addActionListener(e -> {
-                dispose(); // Cierra la portada
-                new PantallaCarga(() -> new Menu()); // Muestra la animación y luego el menú
+                dispose();
+                new PantallaCarga(() -> new Menu());
             });
 
+            add(jugarBtn);
+        } else {
+            // fallback: botón de texto si no hay imagen
+            JButton jugarBtn = new JButton("Jugar");
+            jugarBtn.setBounds(520, 600, 160, 40);
+            jugarBtn.addActionListener(e -> {
+                dispose();
+                new PantallaCarga(() -> new Menu());
+            });
             add(jugarBtn);
         }
 
         // Mostrar logo
-        BufferedImage portadaImg = Resources.loadImage(Resources.IMG_PORTADA);
-
+        BufferedImage portadaImg = Resources.getImage(Resources.IMG_PORTADA);
         if (portadaImg != null) {
-            // Escalar la imagen al tamaño de la ventana
             Image portadaEscalada = portadaImg.getScaledInstance(getWidth(), getHeight(), Image.SCALE_SMOOTH);
             JLabel portadaLabel = new JLabel(new ImageIcon(portadaEscalada));
             portadaLabel.setBounds(0, 0, getWidth(), getHeight());
             add(portadaLabel);
+        } else {
+            // fallback visual simple
+            JLabel label = new JLabel("La Aventura de Magos");
+            label.setBounds(20, 20, 400, 40);
+            add(label);
         }
+
         setVisible(true);
     }
 }

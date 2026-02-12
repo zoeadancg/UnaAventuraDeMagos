@@ -1,6 +1,11 @@
+package src.ui;
 
 import javax.swing.*;
 import javax.swing.border.Border;
+
+import src.assets.ImageUtils;
+import src.util.Resources;
+
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
@@ -47,10 +52,10 @@ public class Menu extends JFrame {
         gbc.insets = new Insets(16, 16, 16, 16);
 
         // Cargar imágenes desde carpeta raíz
-        BufferedImage imgHielo = Resources.loadImage(Resources.IMG_HIELO);
-        BufferedImage imgFuego = Resources.loadImage(Resources.IMG_FUEGO);
-        BufferedImage imgAgua = Resources.loadImage(Resources.IMG_AGUA);
-        BufferedImage imgElectricidad = Resources.loadImage(Resources.IMG_ELECTRICIDAD);
+        BufferedImage imgHielo = Resources.getImage(Resources.IMG_HIELO);
+        BufferedImage imgFuego = Resources.getImage(Resources.IMG_FUEGO);
+        BufferedImage imgAgua = Resources.getImage(Resources.IMG_AGUA);
+        BufferedImage imgElectricidad = Resources.getImage(Resources.IMG_ELECTRICIDAD);
 
         CharacterCard cardHielo = new CharacterCard("Mago de Hielo", imgHielo, new Color(160, 220, 255),
                 "Daño: 50\nHP: 200\nVelocidad: 80");
@@ -82,7 +87,7 @@ public class Menu extends JFrame {
     private JButton createPlayButton() {
         JButton playButton = new JButton("");
 
-        BufferedImage btnImg = Resources.loadImage(Resources.IMG_BOTON_CONTINUAR);
+        BufferedImage btnImg = Resources.getImage(Resources.IMG_BOTON_CONTINUAR);
         if (btnImg != null) {
             playButton.setIcon(new ImageIcon(ImageUtils.scalePixelArt(btnImg, 2)));
             playButton.setHorizontalTextPosition(SwingConstants.CENTER);

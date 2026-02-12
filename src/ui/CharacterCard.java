@@ -1,5 +1,9 @@
+package src.ui;
 
 import javax.swing.*;
+
+import src.assets.ImageUtils;
+
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
