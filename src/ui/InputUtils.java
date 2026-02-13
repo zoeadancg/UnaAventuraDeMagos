@@ -1,6 +1,6 @@
-package src.ui;
+package ui;
 
-import src.model.Direccion;
+import model.Direccion;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

@@ -1,10 +1,10 @@
-package src.game;
+package game;
 
 import java.util.*;
 import java.util.concurrent.*;
 import javax.swing.SwingWorker;
 
-import src.util.Resources;
+import util.Resources;
 
 import java.util.function.Consumer;
 
@@ -32,9 +32,9 @@ public class CargaNiveles {
             return difficulty;
         }
 
-        public src.model.Combatant createInitialEnemy() {
+        public model.Combatant createInitialEnemy() {
             // Placeholder implementation
-            return new src.model.Combatant("Enemy", src.model.Elemento.FUEGO, 100, 10);
+            return new model.Combatant("Enemy", model.Elemento.FUEGO, 100, 10);
         }
     }
 

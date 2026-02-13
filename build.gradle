@@ -19,7 +19,18 @@ dependencies {
 
 application {
     // Ajusta la clase principal si creas un Main
-    mainClass = 'src.game.MainLauncher'
+    mainClass = 'game.MainLauncher'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src']
+        }
+        resources {
+            srcDirs = ['src/resources']
+        }
+    }
 }
 
 java {

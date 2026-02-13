@@ -1,9 +1,9 @@
-package src.game; // <- AJUSTA a tu package real (antes estaba "package game;")
+package game;
 
-import src.model.Combatant;
-import src.model.Elemento;
-import src.model.StatusEffect;
-import src.model.StatusType;
+import model.Combatant;
+import model.Elemento;
+import model.StatusEffect;
+import model.StatusType;
 
 import java.util.List;
 import java.util.Map;

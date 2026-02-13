@@ -1,10 +1,9 @@
-package src.ui;
+package ui;
 
 import javax.swing.*;
 import javax.swing.border.Border;
-
-import src.assets.ImageUtils;
-import src.util.Resources;
+import util.Resources;
+import assets.ImageUtils;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;

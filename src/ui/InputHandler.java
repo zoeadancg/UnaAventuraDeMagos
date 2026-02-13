@@ -1,7 +1,7 @@
-package src.ui;
+package ui;
 
-import src.model.ActionSequence;
-import src.model.Direccion;
+import model.ActionSequence;
+import model.Direccion;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.Toolkit;

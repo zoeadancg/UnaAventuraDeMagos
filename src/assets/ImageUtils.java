@@ -1,4 +1,3 @@
-package src.assets;
 
 import javax.imageio.ImageIO;
 import java.awt.*;

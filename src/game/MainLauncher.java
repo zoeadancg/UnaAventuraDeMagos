@@ -1,7 +1,7 @@
-package src.game;
+package game;
 
-import src.model.Combatant;
-import src.model.Elemento;
+import model.Combatant;
+import model.Elemento;
 
 import javax.swing.*;
 import java.nio.file.Paths;

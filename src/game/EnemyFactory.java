@@ -1,6 +1,6 @@
-package src.game;
+package game;
 
-import src.model.*;
+import model.*;
 import java.util.*;
 
 /**

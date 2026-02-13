@@ -1,8 +1,8 @@
-package src.ui;
+package ui;
 
 import javax.swing.*;
 import java.awt.*;
-import src.util.Resources;
+import util.Resources;
 
 public class PantallaCarga extends JFrame {
     public PantallaCarga(Runnable siguienteAccion) {

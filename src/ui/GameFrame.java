@@ -1,7 +1,7 @@
-package src.ui;
+package ui;
 
-import src.game.GameController;
-import src.model.Combatant;
+import game.GameController;
+import model.Combatant;
 
 import javax.swing.*;
 import java.awt.*;

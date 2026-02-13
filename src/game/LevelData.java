@@ -1,7 +1,7 @@
-package src.game;
+package game;
 
-import src.model.Combatant;
-import src.model.Elemento;
+import model.Combatant;
+import model.Elemento;
 
 import java.util.ArrayList;
 import java.util.Collections;

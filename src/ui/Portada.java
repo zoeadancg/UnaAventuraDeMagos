@@ -1,8 +1,8 @@
-package src.ui;
+package ui;
 
 import javax.swing.*;
 
-import src.util.Resources;
+import util.Resources;
 
 import java.awt.*;
 import java.awt.event.*;

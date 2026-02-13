@@ -1,4 +1,4 @@
-package src.util;
+package util;
 
 import javax.imageio.ImageIO;
 import javax.sound.sampled.*;
@@ -8,13 +8,36 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import javax.swing.ImageIcon;
 
 public final class Resources {
     private Resources() {
     }
 
+    // Image path constants
+    public static final String IMG_PORTADA = "Images/Una_Aventura_de_Magos_logo.png";
+    public static final String IMG_BOTON_JUGAR = "Images/botonJugar.png";
+    public static final String IMG_BOTON_CONTINUAR = "Images/boton_continuar.png";
+    public static final String IMG_HIELO = "Images/mago_hielo.png";
+    public static final String IMG_FUEGO = "Images/mago_fuego.png";
+    public static final String IMG_AGUA = "Images/mago_agua.png";
+    public static final String IMG_ELECTRICIDAD = "Images/mago_electricidad.png";
+    public static final String GIF_CARGANDO = "Animaciones/cargando.gif";
+
     private static final Map<String, BufferedImage> imageCache = new ConcurrentHashMap<>();
     private static final Map<String, Clip> soundCache = new ConcurrentHashMap<>();
+
+    /**
+     * Convenience method: loads and caches an image, returns null on failure.
+     */
+    public static BufferedImage getImage(String path) {
+        try {
+            return loadAndCacheImage(path);
+        } catch (Exception e) {
+            System.err.println("Could not load image: " + path + " - " + e.getMessage());
+            return null;
+        }
+    }
 
     // Normaliza rutas: acepta "/images/foo.png" o "images/foo.png"
     private static String normalize(String path) {
@@ -63,6 +86,15 @@ public final class Resources {
             clip.stop();
             clip.close();
         }
+    }
+
+    public static ImageIcon getIcon(String path) {
+        URL url = Resources.class.getClassLoader().getResource(normalize(path));
+        if (url == null) {
+            System.err.println("Could not find icon: " + path);
+            return null;
+        }
+        return new ImageIcon(url);
     }
 
     // Optional helpers

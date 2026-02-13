@@ -1,7 +1,7 @@
-package src.game;
+package game;
 
-import src.model.*;
-import src.util.Resources;
+import model.*;
+import util.Resources;
 
 import javax.swing.SwingUtilities;
 import java.util.*;

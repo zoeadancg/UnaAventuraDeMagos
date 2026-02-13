@@ -1,8 +1,8 @@
-package src.game;
+package game;
 
-import src.model.*;
-import src.ui.GameFrame;
-import src.util.Resources;
+import model.*;
+import ui.GameFrame;
+import util.Resources;
 
 import javax.swing.SwingUtilities;
 import java.util.*;
@@ -235,6 +235,19 @@ public class GameController {
             LOG.log(Level.WARNING, "Error al reanudar juego", ex);
             SwingUtilities.invokeLater(() -> notifyError(ex));
         }
+    }
+
+    // --------- Separado del Resume y Pause ---------
+    public void onPlayerSequenceSubmitted(List<Direccion> sequence) {
+        if (combatManager == null || sequence == null || sequence.isEmpty())
+            return;
+        background.submit(() -> {
+            try {
+                combatManager.resolveTurn(currentPlayer, sequence);
+            } catch (Exception ex) {
+                SwingUtilities.invokeLater(() -> notifyError(ex));
+            }
+        });
     }
 
     // ---------------- Save / Build SaveData ----------------

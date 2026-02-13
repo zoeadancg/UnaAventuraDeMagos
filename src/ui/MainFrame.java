@@ -1,8 +1,8 @@
-package src.ui;
+package ui;
 
-import src.game.GameController;
-import src.model.Combatant;
-import src.model.Direccion;
+import game.GameController;
+import model.Combatant;
+import model.Direccion;
 
 import javax.swing.*;
 import java.awt.*;

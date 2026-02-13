@@ -1,14 +1,13 @@
-package src.ui;
+package ui;
 
 import javax.swing.*;
-
-import src.assets.ImageUtils;
 
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.util.Objects;
+import assets.ImageUtils;
 
 public class CharacterCard extends JPanel {
     private final String title;
