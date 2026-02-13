@@ -1,3 +1,4 @@
+package assets;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
